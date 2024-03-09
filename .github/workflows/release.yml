@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - main
-
+#adding note here#
 jobs:
   build-and-publish:
     runs-on: windows-latest
