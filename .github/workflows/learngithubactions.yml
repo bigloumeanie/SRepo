@@ -14,3 +14,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - run: 3 + 4
+      - run: ${{ github.repository }}
+      - run: ${{ github.event_name }}
+      - run: ${{ github.ref }}
+      - run: ${{ runner.os }} 
