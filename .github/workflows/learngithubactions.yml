@@ -13,4 +13,4 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: print(3 + 2)
+      - run: '3'
