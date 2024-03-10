@@ -8,13 +8,13 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: 
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      # - uses: actions/setup-node@v4
+        # with: 
+          # node-version: '14'
+      # - run: npm install -g bats
+      # - run: bats -v
       - run: 3 + 4
-      - run: ${{ github.repository }}
-      - run: ${{ github.event_name }}
-      - run: ${{ github.ref }}
-      - run: ${{ runner.os }} 
+      - run: echo "${{ github.repository }}"
+      - run: echo "${{ github.event_name }}"
+      - run: echo "${{ github.ref }}"
+      - run: echo "${{ runner.os }}"
