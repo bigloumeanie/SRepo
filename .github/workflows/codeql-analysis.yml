@@ -1,7 +1,7 @@
 name: "code QL analysis" 
 
 on:
-  pull-request:
+  push:
     branches: [ main ]
 
 jobs:
