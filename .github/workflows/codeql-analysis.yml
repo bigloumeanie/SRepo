@@ -1,0 +1,35 @@
+name: "code QL analysis" 
+
+on:
+  pull-request:
+    branches: [ main ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    
+    strategy:
+      fail-fast: false
+      matrix: 
+        language: ['python']
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+
+      - name: init CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          language: ${{matrix.language}}
+          config-file: .github/workflows/codeql/codeql-config.yaml
+
+      - name: auto build
+        uses: github/codeql-action/autobuild@v1
+
+      - name: perform codeql analysis
+        uses: github/codeql-action/analyze@v1
