@@ -4,7 +4,6 @@ run-name: ${{github.actor}} running git hub actions
 on: [push]
 
 jobs:
-
   check-bats-version:
     runs-on: windows-latest
     steps:
@@ -12,5 +11,5 @@ jobs:
       - uses: actions/setup-node@v4
         with: 
           node-version: '14'
-        - run: npm install -g bats
-        - run: bats -v
+      - run: npm install -g bats
+      - run: bats -v
