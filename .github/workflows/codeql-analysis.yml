@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: init CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@v4
         with:
           language: ${{matrix.language}}
           config-file: .github/workflows/codeql/codeql-config.yaml
