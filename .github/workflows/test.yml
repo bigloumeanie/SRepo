@@ -2,6 +2,7 @@
 # help test this project
 
 name: Test
+run-name: ${{github.actor}} running test
 
 on: [push, pull_request]
 
